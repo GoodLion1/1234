@@ -1,0 +1,39 @@
+ import java.util.Locale;
+import java.util.Scanner;
+
+import static java.lang.Math.sin;
+
+public class dddddddd {
+
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        scanner.useLocale(Locale.UK);
+        double x = readDouble();
+        double y = readDouble(); //Комменты - это хорошо
+        String result = getResult(x, y);
+        System.out.println(result);
+    }
+
+    public static double readDouble() {
+        return scanner.nextDouble();
+    }
+
+    public static String getResult(double x, double y) {
+        double eps = 1e-5;
+        if (y - 0.5 < eps && x > 0 && y > 0 && x > eps && y - sin(x) < eps) {
+            return "Yes";
+        } else {
+            return "No";
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
